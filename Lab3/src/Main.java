@@ -3,20 +3,17 @@ import java.util.Random;
 
 
 
+
 public class Main {
-
-
-
-
 
 
     public static void main(String[] args) {
         Random r = new Random();
 
-        int n = r.nextInt(100-1)+1;
+        int n = r.nextInt(100 - 1) + 1;
         int[] tab = new int[n];
-        for (int i = 0; i <=n-1; i++){
-            tab[i] = r.nextInt(1000+999)-999;
+        for (int i = 0; i <= n - 1; i++) {
+            tab[i] = r.nextInt(1000 + 999) - 999;
             System.out.println(tab[i]);
         }
         //a
@@ -103,44 +100,56 @@ public class Main {
 //            System.out.println(tab[i]);
 //        }
         //g
-        int lewy = r.nextInt(n-1)+1;
-        int prawy = r.nextInt(n-1)+1;
-        if(prawy < lewy) {
-            int bufor = lewy;
-            lewy = prawy;
-            prawy = bufor;
+//        int lewy = r.nextInt(n-1)+1;
+//        int prawy = r.nextInt(n-1)+1;
+//        if(prawy < lewy) {
+//            int bufor = lewy;
+//            lewy = prawy;
+//            prawy = bufor;
+//        }
+//        int bufor;
+//
+//
+//
+//        System.out.println("prawy = "+ prawy + "\nlewy = "+lewy);
+//        for(int i = 0; i <=n-1; i++){
+//            for(int j = n-1; j>=0; j-- ){
+//                if(lewy-1 >= prawy-1)
+//                    break;
+//            if(i == lewy-1 && j == prawy-1){
+//                bufor = tab[lewy-1];
+//                tab[lewy-1] = tab[prawy-1];
+//                tab[prawy-1] = bufor;
+//                lewy++;
+//                prawy--;
+//
+//            }
+//
+//            }
+//        }
+//
+//
+//            for(int i = 0; i <=n-1; i++){
+//                System.out.println(tab[i]);
+//            }
+
+
+//        System.out.println(n);
+
+
+
+
+    }
+
+    public static void generuj(int tab[], int n, int min, int max) {
+        Random r = new Random();
+
+        n = r.nextInt(100 - 1) + 1;
+        tab = new int[n];
+        for (int i = 0; i <= n - 1; i++) {
+            tab[i] = r.nextInt(max - min) + min;
+            System.out.println(tab[i]);
         }
-        int bufor;
-
-
-
-        System.out.println("prawy = "+ prawy + "\nlewy = "+lewy);
-        for(int i = 0; i <=n-1; i++){
-            for(int j = n-1; j>=0; j-- ){
-                if(lewy-1 >= prawy-1)
-                    break;
-            if(i == lewy-1 && j == prawy-1){
-                bufor = tab[lewy-1];
-                tab[lewy-1] = tab[prawy-1];
-                tab[prawy-1] = bufor;
-                lewy++;
-                prawy--;
-
-            }
-
-            }
-        }
-
-
-            for(int i = 0; i <=n-1; i++){
-                System.out.println(tab[i]);
-            }
-
-
-
-
-        System.out.println(n);
-
 
 
     }
