@@ -1,5 +1,7 @@
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class Main {
 
@@ -28,22 +30,94 @@ public class Main {
 //
 
         //Zad2
-        ArrayList<Integer> lista3 = merge(lista, lista2);
+//        ArrayList<Integer> lista3 = merge(lista, lista2);
 
-        for(int i = 0; i <=lista3.size()-1; i++){
-           System.out.println(lista3.get(i));
-        }
+//        for(int i = 0; i <=lista3.size()-1; i++){
+//           System.out.println(lista3.get(i));
+//        }
         //Zad3
+//
+//        ArrayList<Integer> lista3 = mergeSorted(lista, lista2);
+//        for(int i = 0; i <=lista3.size()-1; i++) {
+//            System.out.println(lista3.get(i));
+//        }
+
+        //Zad4
+//        ArrayList<Integer> lista3 = reversed(mergeSorted(lista, lista2));
+//        for(int i = 0; i <=lista3.size()-1; i++) {
+//            System.out.println(lista3.get(i));
+//        }
+
+        //Zad5
+
+//        ArrayList<Integer> lista3 = mergeSorted(lista, lista2);
+//
+//
+//        for(int i = 0; i <=lista3.size()-1; i++) {
+//            System.out.println(lista3.get(i));
+//        }
+//
+//        reverse(lista3);
+//        for(int i = 0; i <=lista3.size()-1; i++) {
+//            System.out.println(lista3.get(i));
+//        }
 
 
 
 
     }
+
+    //zad5
+    public static void reverse(ArrayList<Integer> a){
+
+        int[] arr = new int[a.size()];
+        for(int i = 0; i <=a.size()-1; i++){
+            arr[arr.length-i-1] = a.get(i);
+
+        }
+
+        for(int i = 0; i <=a.size()-1; i++){
+            a.set(i, arr[i]);
+
+
+
+       }
+
+
+
+    }
+
+
+
+
+    //Zad4
+    public static ArrayList<Integer> reversed(ArrayList<Integer> a){
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+
+        int[] arr = new int[a.size()];
+
+        for(int i = 0; i <=a.size()-1; i++){
+            arr[arr.length-i-1] = a.get(i);
+
+        }
+        for(int i = 0; i <=a.size()-1; i++){
+            lista.add(arr[i]);
+
+        }
+
+
+
+
+        return lista;
+    }
+
+
+
     //Zad3
     public static ArrayList<Integer> mergeSorted(ArrayList<Integer> a, ArrayList<Integer> b){
         ArrayList<Integer> lista = new ArrayList<Integer>();
         lista = merge(a, b);
-        int rozmiar 
+        Collections.sort(lista);
 
         return lista;
     }
