@@ -33,9 +33,9 @@ public class Main {
         lista.add(o4);
         lista.add(o5);
 
-        System.out.println(lista);
-        lista.sort(Comparator.naturalOrder());
-        System.out.println(lista);
+//        System.out.println(lista);
+//        lista.sort(Comparator.naturalOrder());
+//        System.out.println(lista);
 //        System.out.println(o.equals(oo));
 //        System.out.println(o.compareTo(oo));
 //        System.out.println(o);

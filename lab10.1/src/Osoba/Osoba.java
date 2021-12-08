@@ -16,20 +16,10 @@ public class Osoba implements Cloneable, Comparable<Osoba> {
 
     @Override
     public int compareTo(Osoba o) {
-        int ctr = 0;
-        if(this.nazwisko.compareTo(o.nazwisko) > 0){
-            ctr+=2;
+        if(this.nazwisko.compareTo(o.nazwisko) == 0){
+
+
         }
-        if(this.nazwisko.compareTo(o.nazwisko) < 0){
-            ctr-=2;
-        }
-        if(this.dataUrodzenia.compareTo(o.dataUrodzenia) < 0){
-            ctr-=1;
-        }
-        if(this.dataUrodzenia.compareTo(o.dataUrodzenia) > 0){
-            ctr+=1;
-        }
-        return ctr;
     }
 
     public boolean equals(Osoba o){
@@ -45,5 +35,13 @@ public class Osoba implements Cloneable, Comparable<Osoba> {
         return rtn;
 
 
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public LocalDate getDataUrodzenia() {
+        return dataUrodzenia;
     }
 }
