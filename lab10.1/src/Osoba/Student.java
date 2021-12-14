@@ -3,7 +3,7 @@ package Osoba;
 import java.time.LocalDate;
 
 
-public class Student extends Osoba implements Comparable<Student>, Cloneable {
+public class Student extends Osoba implements Comparable<Osoba>, Cloneable {
     private double srednia;
 
     public Student(String nazwisko, LocalDate dataUrodzenia, double srednia) {
@@ -14,29 +14,28 @@ public class Student extends Osoba implements Comparable<Student>, Cloneable {
 
 
 
-
-    @Override
     public int compareTo(Student s) {
+        Osoba o = new Osoba(s.getNazwisko(), s.getDataUrodzenia());
+        int compareValue = super.compareTo(o);
+        if(this.srednia > s.srednia)
+            compareValue+=1;
+        if (this.srednia < s.srednia)
+            compareValue-=1;
 
-        int ctr = 0;
-        if(super.getNazwisko().compareTo(s.getNazwisko()) > 0){
-            ctr+=2;
-        }
-        if(this.nazwisko.compareTo(s.nazwisko) < 0){
-            ctr-=2;
-        }
-        if(this.dataUrodzenia.compareTo(s.dataUrodzenia) < 0){
-            ctr-=1;
-        }
-        if(this.dataUrodzenia.compareTo(s.dataUrodzenia) > 0){
-            ctr+=1;
-        }
-        return ctr;
+
+        return compareValue;
+
+
+
+
     }
 
 
+    public String toString(){
+        String rtn = this.getClass().getSimpleName() + "[" + super.getNazwisko() + "]" + super.getDataUrodzenia() + ", " + this.srednia;
+        return rtn;
 
 
-
+    }
 
 }
